@@ -8,7 +8,7 @@ import {
   ArrowTopRightOnSquareIcon,
   ArrowsRightLeftIcon,
   CheckCircleIcon,
-  ChevronDownIcon,
+  ChevronUpIcon,
   DocumentDuplicateIcon,
   QrCodeIcon,
 } from "@heroicons/react/24/outline";
@@ -51,11 +51,11 @@ export const RainbowKitCustomConnectButton = () => {
                   <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-error btn-sm dropdown-toggle gap-1">
                       <span>Wrong network</span>
-                      <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0" />
+                      <ChevronUpIcon className="h-6 w-4 ml-2 sm:ml-0" />
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu p-2 mt-1 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
+                      className="dropdown-content menu p-2 bottom-full mb-1 shadow-center shadow-accent bg-base-200 rounded-box gap-1 origin-bottom"
                     >
                       <li>
                         <button
@@ -98,11 +98,11 @@ export const RainbowKitCustomConnectButton = () => {
                     >
                       <BlockieAvatar address={account.address} size={30} ensImage={account.ensAvatar} />
                       <span className="ml-2 mr-1">{account.displayName}</span>
-                      <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0" />
+                      <ChevronUpIcon className="h-6 w-4 ml-2 sm:ml-0" />
                     </label>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu z-[2] p-2 mt-2 shadow-center shadow-accent bg-base-200 rounded-box gap-1"
+                      className="dropdown-content menu z-[2] p-2 bottom-full mb-1 shadow-center shadow-accent bg-base-200 rounded-box gap-1 origin-bottom"
                     >
                       <li>
                         {addressCopied ? (

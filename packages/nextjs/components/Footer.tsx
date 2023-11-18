@@ -14,19 +14,10 @@ export const Footer = () => {
   });
 
   useEffect(() => {
-    const initiateConnection = async () => {
-      try {
-        await connect();
-        // Hide the button after the connection attempt
-        setHideConnectBtn(true);
-      } catch (error) {
-        console.error("Connection failed:", error);
-        // Optionally, you can also set the button to hide in case of an error
-        // setHideConnectBtn(true);
-      }
-    };
-
-    initiateConnection();
+    if (window.ethereum && window.ethereum.isMiniPay) {
+      setHideConnectBtn(true);
+      connect();
+    }
   }, []);
 
   return (

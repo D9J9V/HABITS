@@ -10,10 +10,10 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">NEW ENTRY</span>
+            <span className="block text-4xl font-bold">COMMUNITY</span>
           </h1>
           <h2>
-            <span>Complete your challenges for the day</span>
+            <span>View NOTBOOKS shared with you here</span>
           </h2>
         </div>
 

@@ -1,19 +1,26 @@
+import { useState } from "react";
 import Link from "next/link";
 import type { NextPage } from "next";
 import { BugAntIcon, MagnifyingGlassIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { MetaHeader } from "~~/components/MetaHeader";
+import { InputBase } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <>
       <MetaHeader />
       <div className="flex items-center flex-col flex-grow pt-10">
         <div className="px-5">
           <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">NEW ENTRY</span>
+            <span className="block text-4xl font-bold">EXPLORE</span>
           </h1>
+          <div className="mb-8">
+            <InputBase name="input" placeholder="Search..." value={inputValue} onChange={setInputValue} />
+          </div>
           <h2>
-            <span>Complete your challenges for the day</span>
+            <span>Add NOTBOOKS: Join a challenge, </span>
           </h2>
         </div>
 

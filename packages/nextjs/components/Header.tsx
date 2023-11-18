@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
-  ArchiveBoxIcon,
+  ArrowRightOnRectangleIcon,
   AtSymbolIcon,
   Bars3Icon,
+  Cog6ToothIcon,
   DocumentMagnifyingGlassIcon,
   PencilSquareIcon,
+  TrophyIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
@@ -68,7 +70,7 @@ export const Header = () => {
       </li>
       <li>
         <NavLink href="/trophies">
-          <ArchiveBoxIcon className="h-4 w-4" />
+          <TrophyIcon className="h-4 w-4" />
           TROPHIES
         </NavLink>
       </li>
@@ -78,14 +80,14 @@ export const Header = () => {
     <>
       <li>
         <NavLink href="/login">
-          <AtSymbolIcon className="h-4 w-4" />
+          <ArrowRightOnRectangleIcon className="h-4 w-4" />
           LOGIN
         </NavLink>
       </li>
       <li>
-        <NavLink href="/account">
-          <ArchiveBoxIcon className="h-4 w-4" />
-          ACCOUNT
+        <NavLink href="/settings">
+          <Cog6ToothIcon className="h-4 w-4" />
+          SETTINGS
         </NavLink>
       </li>
     </>

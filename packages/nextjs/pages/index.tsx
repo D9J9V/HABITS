@@ -6,13 +6,14 @@ const Home: NextPage = () => {
   const [transition1Enabled, setTransition1Enabled] = useState(true);
   const [transition2Enabled, setTransition2Enabled] = useState(true);
   const [transition3Enabled, setTransition3Enabled] = useState(true);
+
   return (
     <>
       <MetaHeader />
       <div className="flex items-center flex-col flex-grow pt-5">
         <div className="px-5">
           <h1 className="text-center mb-4">
-            <span className="block text-2xl font-bold">NEW ENTRY</span>
+            <span className="block text-2xl font-bold">DAILY TASKS</span>
           </h1>
           <h2>
             <span>Complete your challenges for the day</span>

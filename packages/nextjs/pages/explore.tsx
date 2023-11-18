@@ -5,7 +5,7 @@ import { BugAntIcon, MagnifyingGlassIcon, SparklesIcon } from "@heroicons/react/
 import { MetaHeader } from "~~/components/MetaHeader";
 import { InputBase } from "~~/components/scaffold-eth";
 
-const Home: NextPage = () => {
+const Explore: NextPage = () => {
   const [inputValue, setInputValue] = useState("");
 
   return (
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
             <InputBase name="input" placeholder="Search..." value={inputValue} onChange={setInputValue} />
           </div>
           <h2>
-            <span>Add NOTBOOKS: Join a challenge, </span>
+            <span>Join a challenge</span>
           </h2>
         </div>
 
@@ -63,4 +63,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Explore;

@@ -1,15 +1,40 @@
+import { useState } from "react";
+import { useEffect } from "react";
+import { useConnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 /**
  * Site footer
  */
 export const Footer = () => {
+  const [hideConnectBtn, setHideConnectBtn] = useState(false);
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+
+  useEffect(() => {
+    const initiateConnection = async () => {
+      try {
+        await connect();
+        // Hide the button after the connection attempt
+        setHideConnectBtn(true);
+      } catch (error) {
+        console.error("Connection failed:", error);
+        // Optionally, you can also set the button to hide in case of an error
+        // setHideConnectBtn(true);
+      }
+    };
+
+    initiateConnection();
+  }, []);
+
   return (
     <div className="min-h-0 py-5 px-1 mb-11 lg:mb-0">
       <div>
         <div className="fixed flex justify-between items-center w-full z-10 p-4 bottom-0 left-0 pointer-events-none">
           <div className="flex space-x-2 pointer-events-auto">
-            <RainbowKitCustomConnectButton />
+            {!hideConnectBtn && <RainbowKitCustomConnectButton />}
           </div>
         </div>
       </div>

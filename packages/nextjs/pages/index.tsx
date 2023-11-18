@@ -1,53 +1,69 @@
-import Link from "next/link";
+import { useState } from "react";
 import type { NextPage } from "next";
-import { BugAntIcon, MagnifyingGlassIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { MetaHeader } from "~~/components/MetaHeader";
 
 const Home: NextPage = () => {
+  const [transition1Enabled, setTransition1Enabled] = useState(true);
+  const [transition2Enabled, setTransition2Enabled] = useState(true);
+  const [transition3Enabled, setTransition3Enabled] = useState(true);
   return (
     <>
       <MetaHeader />
-      <div className="flex items-center flex-col flex-grow pt-10">
+      <div className="flex items-center flex-col flex-grow pt-5">
         <div className="px-5">
-          <h1 className="text-center mb-8">
-            <span className="block text-4xl font-bold">NEW ENTRY</span>
+          <h1 className="text-center mb-4">
+            <span className="block text-2xl font-bold">NEW ENTRY</span>
           </h1>
           <h2>
             <span>Complete your challenges for the day</span>
           </h2>
         </div>
 
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contract
-                </Link>{" "}
-                tab.
-              </p>
+        <div className="flex-grow bg-base-100 w-full mt-4 px-8 py-4">
+          <div className="flex justify-center items-center gap-0 flex-col sm:flex-row">
+            <div className="w-full relative" style={{ paddingTop: "50%" }}>
+              <button
+                className="btn btn-ghost absolute top-0 left-0 w-full h-full bg-center bg-contain bg-no-repeat bg-[url('/assets/workout.svg')] rounded-none"
+                onClick={() => {
+                  setTransition1Enabled(!transition1Enabled);
+                }}
+              >
+                <div
+                  className={`absolute inset-0 bg-center bg-contain bg-no-repeat bg-[url('/assets/workoutpress.svg')] transition-opacity ${
+                    transition1Enabled ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+              </button>
             </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <SparklesIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Experiment with{" "}
-                <Link href="/example-ui" passHref className="link">
-                  Example UI
-                </Link>{" "}
-                to build your own UI.
-              </p>
+
+            <div className="w-full relative" style={{ paddingTop: "50%" }}>
+              <button
+                className="btn btn-ghost absolute top-0 left-0 w-full h-full bg-center bg-contain bg-no-repeat bg-[url('/assets/savings.svg')] rounded-none"
+                onClick={() => {
+                  setTransition2Enabled(!transition2Enabled);
+                }}
+              >
+                <div
+                  className={`absolute inset-0 bg-center bg-contain bg-no-repeat bg-[url('/assets/savingspress.svg')] transition-opacity ${
+                    transition2Enabled ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+              </button>
             </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
+
+            <div className="w-full relative" style={{ paddingTop: "50%" }}>
+              <button
+                className="btn btn-ghost absolute top-0 left-0 w-full h-full bg-center bg-contain bg-no-repeat bg-[url('/assets/flow.svg')] rounded-none"
+                onClick={() => {
+                  setTransition3Enabled(!transition3Enabled);
+                }}
+              >
+                <div
+                  className={`absolute inset-0 bg-center bg-contain bg-no-repeat bg-[url('/assets/flowpress.svg')] transition-opacity ${
+                    transition3Enabled ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+              </button>
             </div>
           </div>
         </div>

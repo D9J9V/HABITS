@@ -1,4 +1,3 @@
-import { SwitchTheme } from "~~/components/SwitchTheme";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 /**
@@ -12,8 +11,6 @@ export const Footer = () => {
           <div className="flex space-x-2 pointer-events-auto">
             <RainbowKitCustomConnectButton />
           </div>
-
-          <SwitchTheme className="pointer-events-auto" />
         </div>
       </div>
 
